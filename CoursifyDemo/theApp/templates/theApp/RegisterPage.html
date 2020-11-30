@@ -6,10 +6,12 @@
   <div class="jumbotron">
     <h5>Student Registration Form</h5>
 
-    <form class="form-group"  method="POST">
+    <form class="form-group"  method="POST" >
       {% csrf_token %}
 
       {{ form.as_p }}
+
+      <label for="username">Username: {{ form.username }}</label>
 
       <input type="submit" class="btn btn-outline-info" style=" border-radius: 10px " name="" value="Register!  ">
     </form>
