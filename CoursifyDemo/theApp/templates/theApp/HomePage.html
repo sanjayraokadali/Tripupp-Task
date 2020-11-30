@@ -3,16 +3,151 @@
   <head>
     <meta charset="utf-8">
     <title>Coursify Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   </head>
-  <body>
-    <a href="{% url 'homepage' %}">Home</a>
-    <a href="{% url 'theApp:doubtpage' %}">Ask Your Doubts</a>
-    <a href="{% url 'theApp:coursepage' %}">Course</a>
-    <a href="{% url 'theApp:librarypage' %}">Library</a>
-    <a href="{% url 'theApp:liveclasspage' %}">Live Class</a>
-    {% block bodyblock %}
-      <h1>Coursify Demo Task</h1>
-    {% endblock %}
+
+
+
+
+  <body style=" background-image: url('https://c1.wallpaperflare.com/preview/281/150/428/various-book-books.jpg'); ">
+    <ul class="navbar nav justify-content-end sticky-top " style=" background-color: rgba(254, 255, 171, 0.4);
+      border-radius: 70px;
+
+    " >
+    <li class="nav-item">
+      <p>______</p>
+    </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-light" href="{% url 'homepage' %}" style=" border-radius: 40px;" > <strong> Home</strong> </a>
+      </li>
+      <li class="nav-item">
+        <p>______</p>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-light" href="{% url 'theApp:doubtpage' %}" style=" border-radius: 40px;"> <strong>Ask Doubt</strong> </a>
+      </li>
+      <li class="nav-item">
+        <p>______</p>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-light" href="{% url 'theApp:coursepage' %}" style=" border-radius: 40px;"> <strong>Courses</strong> </a>
+      </li>
+      <li class="nav-item">
+        <p>______</p>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-light" href="{% url 'theApp:librarypage' %}" style=" border-radius: 40px;"> <strong>Library</strong> </a>
+      </li>
+      <li class="nav-item">
+        <p>______</p>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-light" href="{% url 'theApp:liveclasspage' %}" tabindex="-1" style=" border-radius: 40px;"> <strong>Live Class</strong> </a>
+      </li>
+      <li class="nav-item">
+        <p>___</p>
+      </li>
+    </ul>
+    <div class ="container">
+      <div class="jumbotron" style=" border-top-left-radius: 50px; border-bottom-left-radius:50px; background-color: white; width: 1320px; background-image: url('https://selfgrowth.info/photos/blue-photos/best-blue-textures-free-royalty8399.jpg'); "  >
+
+        {% block bodyblock %}
+
+        <div class="media">
+          <img src="https://images.unsplash.com/3/doctype-hi-res.jpg?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMDd9" style=" width: 200px; height:200px; border-radius: 50px;"  class="mr-3" alt="...">
+          <div class="media-body">
+            <h1 class="mt-0" style=" font-size: 5rem; opacity: 0.6;">CoursiFy  <br>An E-Learning Platform</h1>
+
+          </div>
+          </div>
+
+
+
+
+          <h1 style=" text-align: end; background-color: rgba(45, 23, 123, 0.2);
+              border-top-left-radius: 60px; border-bottom-left-radius: 60px; opacity: 0.8;
+
+          " > <strong> Clarify Your Doubts <br>  In Your Own Language </strong> </h1>
+          <div class="card mb-3" style="max-width: 1200px; height: 350px; border-radius: 50px; background-color: white;
+            border-width: thick; border-style: outset;
+            ">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="https://i.pcmag.com/imagery/roundups/047l7lS9i8mIMvZ6Z2rwXI5-1..1569492807.jpg" class="card-img" alt="..." style=" border-radius: 50px" >
+              </div>
+              <div class="col-md-8" style=" opacity: 0.7" >
+                <div class="card-body">
+                  <h2 class="card-title" style=" text-align:center; " > <strong> Welcome To Coursify!</strong> </h2>
+                  <h4 class="card-text" style=" text-align: center; " >Coursify lets students raise a doubt in any language they prefer. <br><br>
+                                       An Online Study Platform, where brilliant minds can explore various subjects and courses
+                                       with an idea in mind to make one comfortable with which ever language they are confident in!
+                   </h4>
+                  <p class="card-text"><small class="text-muted">Please Follow Our Navigations For More!</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-group"  >
+            <div class="card"  style="border-radius: 50px; background-color: rgba(87, 235, 227, 0.4); border-width: thick; border-style: hidden;">
+              <img src="https://www.bmtrada.com/-/media/images/bm-trada/bmtradaicons/certification-icon-midblue-640x480px.jpg?h=480&w=640&la=en&hash=58FC9EE61D085F12FD4C83CC68C4BA375FDFBB24" class="card-img-top" alt="..."
+
+              style=" border-radius: 50px; border-style: solid; border-color: rgba(254, 255, 171, 0.3);"
+
+              >
+              <div class="card-body">
+                <h5 class="card-title" style=" text-align: center; " >20+ <br> State Boards!</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card"  style="border-radius: 50px; background-color: rgba(237, 240, 62, 0.4); border-width: thick; border-style: hidden;">
+              <img src="https://lh3.googleusercontent.com/proxy/Uyku4VnhPm4zml46JR8sYYp__f5bb11riE8eRrwRRyBbja3bRMzSh32tKgvgSiECkkaNTzmCV1qkQzIbvfITWC9e0j74ugB3Fiactyg408UXihGBURDzH6ZvUcfXJS275JYm-LdJAz_YNM_9qfATFD2KhlCDYzv_yuPsw7s" class="card-img-top" alt="..."
+              style=" border-radius: 50px; border-style: solid; border-color: rgba(254, 255, 171, 0.3);"
+              >
+              <div class="card-body">
+                <h5 class="card-title" style=" text-align: center; ">40,000+ <br> Doubts Cleared!</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+
+
+            <div class="card"  style="border-radius: 50px; background-color: rgba(49, 247, 178, 0.4); border-width: thick; border-style: hidden;">
+              <img src="https://media.wired.com/photos/5be4cd03db23f3775e466767/125:94/w_2375,h_1786,c_limit/books-521812297.jpg" class="card-img-top" alt="..."
+                style=" border-radius: 50px; border-style: solid; border-color: rgba(254, 255, 171, 0.3);"
+              >
+              <div class="card-body">
+                <h5 class="card-title" style=" text-align: center; ">5000+ <br> Books Covered!  </h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card"  style="border-radius: 50px; background-color: rgba(247, 178, 49, 0.4); border-width: thick; border-style: hidden;">
+              <img src="https://researchdigest.files.wordpress.com/2019/01/gettyimages-485409944.jpg" class="card-img-top" alt="..."
+                style=" border-radius: 50px; border-style: solid; border-color: rgba(254, 255, 171, 0.3);"
+              >
+              <div class="card-body">
+                <h5 class="card-title" style=" text-align: center; ">1,000,000+ <br> Video Lectures!</h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+
+
+        {% endblock %}
+
+      </div>
+
+
+      </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
   </body>
 </html>
