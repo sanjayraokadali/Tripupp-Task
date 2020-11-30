@@ -5,7 +5,11 @@
     <title>Coursify Demo</title>
   </head>
   <body>
-
+    <a href="{% url 'homepage' %}">Home</a>
+    <a href="{% url 'theApp:doubtpage' %}">Ask Your Doubts</a>
+    <a href="{% url 'theApp:coursepage' %}">Course</a>
+    <a href="{% url 'theApp:librarypage' %}">Library</a>
+    <a href="{% url 'theApp:liveclasspage' %}">Live Class</a>
     {% block bodyblock %}
       <h1>Coursify Demo Task</h1>
     {% endblock %}
