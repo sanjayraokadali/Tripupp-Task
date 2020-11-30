@@ -10,5 +10,6 @@ urlpatterns = [
     url('^CoursePage/$',views.CoursePage,name='coursepage'),
     url('^LiveClassPage/$',views.LiveClassPage,name='liveclasspage'),
     url('^LibraryPage/$',views.LibraryPage,name='librarypage'),
+    url('^StudentRegistration/$',views.RegisterPage,name='registerpage'),
 
 ]
