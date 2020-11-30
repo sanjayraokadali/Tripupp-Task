@@ -3,53 +3,63 @@
 
 {% block bodyblock %}
 
-  <div class="jumbotron" style=" background-image: url('https://media.istockphoto.com/videos/animation-of-a-lot-of-white-question-mark-moving-on-black-background-video-id1202275093?s=640x640');
+  <div class="jumbotron" style=" background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/82/35/Vudxaz.jpg');
 
     border-radius: 50px;
 
   " >
     <div class="media">
-      <img src="https://lh3.googleusercontent.com/proxy/Uyku4VnhPm4zml46JR8sYYp__f5bb11riE8eRrwRRyBbja3bRMzSh32tKgvgSiECkkaNTzmCV1qkQzIbvfITWC9e0j74ugB3Fiactyg408UXihGBURDzH6ZvUcfXJS275JYm-LdJAz_YNM_9qfATFD2KhlCDYzv_yuPsw7s" style=" width: 100px; height:100px; border-radius: 25px;"  class="mr-3" alt="...">
+      <img src="https://lh3.googleusercontent.com/proxy/Uyku4VnhPm4zml46JR8sYYp__f5bb11riE8eRrwRRyBbja3bRMzSh32tKgvgSiECkkaNTzmCV1qkQzIbvfITWC9e0j74ugB3Fiactyg408UXihGBURDzH6ZvUcfXJS275JYm-LdJAz_YNM_9qfATFD2KhlCDYzv_yuPsw7s" style=" width: 150px; height:150px; border-radius: 25px;"  class="mr-3" alt="...">
       <div class="media-body">
-        <h5 class="mt-0" style=" font-size: 4rem; opacity: 0.9; color: white;">Submit Your Doubt Here!</h5>
+        <h5 class="mt-0" style=" font-size: 3rem; text-align: center; opacity: 0.9; color: white; border-radius: 30px; background-image: url('https://t4.ftcdn.net/jpg/02/56/64/17/240_F_256641728_mB7VljgZFaigfiu8O5Bwlg1V5dOCmVsP.jpg'); ">Submit Your Doubt Here!</h5>
 
       </div>
       </div>
       <br><br>
-    <form method="POST">
-      {% csrf_token %}
-  <div class="form-group">
-    <label for="exampleFormControlInput1" style=" color: white; " >Please Enter your registered Username:</label>
-    <input type="username" name='username' class="form-control" id="exampleFormControlInput1" placeholder="Username">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1" style=" color: white; ">Select Subject:</label>
-    <select class="form-control" name='subject' id="exampleFormControlSelect1">
-      <option>Maths</option>
-      <option>Physics</option>
-      <option>Chemistry</option>
-      <option>Biology</option>
-      <option>Computer Science</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1" style=" color: white; ">Enter Your Preferred Language:</label>
-    <select class="form-control" name='language' id="exampleFormControlSelect1">
-      <option>English</option>
-      <option>Hindi</option>
-      <option>French</option>
-      <option>Spanish</option>
-      <option>German</option>
-    </select>
-  </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1" style=" color: white; ">Enter your doubt here in your Preferred Language:</label>
-    <textarea class="form-control" name='doubt' id="exampleFormControlTextarea1" rows="5" ></textarea>
-  </div>
+      <div class="jumbotron">
 
-  <input class=" btn btn-outline-success text-light " style=" align-self: center; " type="submit" name="" value="Submit Doubt">
-</form>
+        <form method="POST">
+          {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleFormControlInput1" style="  color: black;" >Please Enter your registered Username:</label>
+        <input type="username" name='username' class="form-control" id="exampleFormControlInput1" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1" style="  color: black;">Select Subject:</label>
+        <select class="form-control" name='subject' id="exampleFormControlSelect1">
+          <option>Maths</option>
+          <option>Physics</option>
+          <option>Chemistry</option>
+          <option>Biology</option>
+          <option>Computer Science</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1" style="  color: black;">Enter Your Preferred Language:</label>
+        <select class="form-control" name='language' id="exampleFormControlSelect1">
+          <option>English</option>
+          <option>Hindi</option>
+          <option>French</option>
+          <option>Spanish</option>
+          <option>German</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1" style="color: black;">Enter your doubt here in your Preferred Language:</label>
+        <textarea class="form-control" name='doubt' id="exampleFormControlTextarea1" rows="5" ></textarea>
+      </div>
+
+      <input class=" btn btn-info  " style=" align-self: center; " type="submit" name="" value="Submit Doubt">
+    </form>
+
+
+
+
+      </div>
+
+
 
 
   </div>
