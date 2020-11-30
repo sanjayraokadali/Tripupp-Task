@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from theApp.models import ClarifyDoubtModel
 
 class StudentRegistrationModelForm(forms.ModelForm):
 
@@ -10,4 +11,3 @@ class StudentRegistrationModelForm(forms.ModelForm):
         model = User
 
         fields = ('first_name','last_name','username','email','password')
-        
