@@ -2,6 +2,7 @@ from django.shortcuts import render
 from theApp.models import DoubtModel
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from theApp.forms import StudentRegistrationModelForm
 # Create your views here.
 def HomePage(request):
 
@@ -9,7 +10,23 @@ def HomePage(request):
 
 def RegisterPage(request):
 
-    return render(request,'theApp/RegisterPage.html')
+    form = StudentRegistrationModelForm()
+
+    if request.method == 'POST':
+
+        form = StudentRegistrationModelForm(data = request.POST)
+
+        if form.is_valid():
+
+            user = form.save()
+
+            user.set_password(user.password)
+
+            user.save()
+
+            return HomePage(request)
+
+    return render(request,'theApp/RegisterPage.html',{'form':form})
 
 def CoursePage(request):
 
