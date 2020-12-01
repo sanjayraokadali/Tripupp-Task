@@ -25,6 +25,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('^$',views.HomePage,name='homepage'),
     url('^HomePage/',include('theApp.urls')),
-    url('^Logout/',views.Logout,name='logout')
+    url('^Logout/',views.Logout,name='logout'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

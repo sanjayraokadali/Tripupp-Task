@@ -2,14 +2,14 @@
 {% extends 'theApp/HomePage.html' %}
 
 {% block bodyblock %}
-  <h1>User Account!</h1>
+  <h1 style=" text-align: center;" >Welcome to Your Account {{ user.username }}!</h1>
   {% if user.is_authenticated %}
-    <h4 style=" text-align: center;" > <strong> Welcome to Your Account {{ user.username }}</strong></h4>
+    <h4 style=" text-align: center;" > <strong>This is your SLATE! <br> List of all your sessions booked and your doubts submitted! </strong></h4>
 
-    <div class="jumbotron" style=" background-color: white; opacity: 0.87; border-radius: 50px; " >
+    <div class="jumbotron" style=" background-color: rgba(45,23,34,0.5); border-radius: 50px; " >
     <div class="row">
       <div class="col-sm">
-        <h4 style=" text-align: center;" > Doubts in Preferred Language </h4>
+        <h4 style=" text-align: center; color: white;" > Doubts in Preferred Language </h4>
         {% for item in doubts %}
           {% if user.username == item.username %}
                 <br>
@@ -27,14 +27,14 @@
 
       </div>
       <div class="col-sm">
-          <h4 style=" text-align: center;" > Clarifying Doubts </h4>
+          <h4 style=" text-align: center; color: white;" > Clarifying Doubts </h4>
         {% for item in cdoubts %}
           {% if user.username == item.username %}
                 <br>
                 <ul class="list-group">
                     <li class="list-group-item"> Subject: {{ item.subject  }} </li>
                     <li class="list-group-item">
-                    Uploaded Image: <br>  <img src="{{ item.doubt_pic.url }}" alt="..">
+                    Uploaded Image: <br>  <img src="{{ item.doubt_pic.url }}" alt=".." style=" width: 200px; height: 200px;" >
                     </li>
                     <li class="list-group-item"> Doubt: <br> {{ item.doubt }}</li>
 
@@ -51,7 +51,7 @@
 
 
       <div class="col-sm">
-          <h4 style=" text-align: center;" > Booked LIVE Classes </h4>
+          <h4 style=" text-align: center; color: white;" > Booked LIVE Classes </h4>
         {% for item in liveclass %}
           {% if user.username == item.username %}
                 <br>
@@ -60,7 +60,7 @@
                     <li class="list-group-item"> Subject: {{ item.subject  }} </li>
                     <li class="list-group-item"> Date: {{ item.date }}</li>
                     <li class="list-group-item" > Time: {{ item.time }}  </li>
-                    <li class="list-group-item"> Query: <br> {{ item.query }}</li>
+                    <li class="list-group-item"> Query (if any): <br> {{ item.query }}</li>
 
 
                 </ul>

@@ -65,6 +65,7 @@ def AccountPage(request):
 
     return render(request,'theApp/AccountPage.html',{'doubts':doubts,'cdoubts':clarifydoubts,'liveclass':liveclass})
 
+
 def CoursePage(request):
 
     return render(request,'theApp/CoursePage.html')

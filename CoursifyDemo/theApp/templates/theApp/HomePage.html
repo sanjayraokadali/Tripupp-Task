@@ -20,9 +20,7 @@
       border-radius: 70px;
 
     " >
-    <li class="nav-item">
-      <p>______</p>
-    </li>
+
 
       <li class="nav-item">
         <a class="nav-link btn btn-light" href="{% url 'homepage' %}" style=" border-radius: 40px;" > <strong> Home</strong> </a>
@@ -44,17 +42,12 @@
         <p>______</p>
       </li>
       <li class="nav-item">
-        <a class="nav-link btn btn-light" href="{% url 'theApp:coursepage' %}" style=" border-radius: 40px;"> <strong>Courses</strong> </a>
+        <a class="nav-link btn btn-light" href="#courses" style=" border-radius: 40px;"> <strong>Courses</strong> </a>
       </li>
       <li class="nav-item">
         <p>______</p>
       </li>
-      <li class="nav-item">
-        <a class="nav-link btn btn-light" href="{% url 'theApp:librarypage' %}" style=" border-radius: 40px;"> <strong>Library</strong> </a>
-      </li>
-      <li class="nav-item">
-        <p>______</p>
-      </li>
+
       <li class="nav-item">
 
         <a class="nav-link btn btn-light" href="#live_class"  tabindex="-1" style=" border-radius: 40px;"> <strong>Live Class</strong> </a>
@@ -98,7 +91,7 @@
       {% endif %}
 
     </ul>
-      <div class="jumbotron" style=" padding-left: 50px; padding-right: 50px; margin-left: 30px; border-radius: 50px; background-color: white; width: 1470px; background-image: url('https://selfgrowth.info/photos/blue-photos/best-blue-textures-free-royalty8399.jpg'); "  >
+      <div class="jumbotron" style="padding-left: 50px; padding-right: 50px; margin-left: 30px; border-style: inset; border-color: black; border-radius: 50px; background-color: white; width: 1470px; background-image: url('https://selfgrowth.info/photos/blue-photos/best-blue-textures-free-royalty8399.jpg'); "  >
 
         {% block bodyblock %}
 
@@ -122,13 +115,43 @@
               <br><br>
 
 
+        {% if user.is_authenticated %}
             <a class="btn btn-primary text-white"
 
               style=" border: solid; border-color: black;  border-radius: 100px; position: relative; top: 50%; left: 75% ; opacity: 0.5; "
 
-              href="{% url 'theApp:doubtpage' %}"> <h3>Ask your doubt here!</h3>
+              href="{% url 'theApp:doubtpage' %}"> <h3>Ask Your Doubt Here!</h3>
 
             </a>
+            {% else %}
+            <a class="btn btn-warning" data-toggle="modal" data-target="#staticBackdrop"
+
+                style=" border: solid; border-color: black;  border-radius: 100px; position: relative; top: 50%; left: 75% ; opacity: 0.5; ">
+      <br> <h4>Ask Your Doubt Here! </h4>
+
+            </a>
+
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Oops..!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Please Login to CoursiFy to use this feature
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <a href="{% url 'theApp:loginpage' %}" class="btn btn-info" >Go To Login</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        {% endif %}
             <br><br>
 
           <div class="card mb-3" style="max-width: 1400px; height: 350px; border-radius: 50px; background-color: white;
@@ -151,7 +174,7 @@
             </div>
           </div>
 
-            <br><br><br>
+            <br><br>
 
           <div class="card-group" style=" padding: 10px; "  >
 
@@ -241,14 +264,42 @@
 
             <br>
 
+            {% if user.is_authenticated %}
             <a class="btn btn-outline-danger bg-secondary text-white"
-
               style=" border: solid; border-color: black; height: 90px; border-radius: 30px; position: relative; top: 50%; left: 40% ; opacity: 0.5 "
 
               href="{% url 'theApp:clarifydoubtpage' %}"> <br> <h3>Clarify Your Doubts here</h3>
+            </a>
+            {% else %}
+            <a class="btn btn-light" data-toggle="modal" data-target="#staticBackdrop"
 
+              style=" border: solid; border-color: black; height: 90px; border-radius: 30px; position: relative; top: 50%; left: 37% ; opacity: 0.5; "
+
+              > <br> <h3>Clarify Your Doubts Here</h3>
 
             </a>
+
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Oops..!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Please Login to CoursiFy to use this feature
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <a href="{% url 'theApp:loginpage' %}" class="btn btn-info" >Go To Login</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            {% endif %}
 
             <br><br><br>
 
@@ -289,14 +340,85 @@
             </div>
 
             <br>
-
-              <a class="btn btn-outline-dark bg-success text-white"
+            {% if user.is_authenticated %}
+              <a class="btn btn-outline-dark bg-success text-white notlogged"
 
                 style=" border: solid; border-color: black; height: 90px; border-radius: 30px; position: relative; top: 50%; left: 37% ; opacity: 0.5; "
 
                 href="{% url 'theApp:doubtpage' %}"> <br> <h3>Book Your Live Class Now!</h3>
 
               </a>
+              {% else %}
+              <a class="btn btn-success" data-toggle="modal" data-target="#staticBackdrop"
+
+                style=" border: solid; border-color: black; height: 90px; border-radius: 30px; position: relative; top: 50%; left: 37% ; opacity: 0.5; "
+
+                > <br> <h3>Book Your Live Class Now!</h3>
+
+              </a>
+
+              <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Oops..!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Please Login to CoursiFy to use this feature
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <a href="{% url 'theApp:loginpage' %}" class="btn btn-info" >Go To Login</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            {% endif %}
+
+
+
+            </div>
+
+            <section id="courses" >
+                <br><br><br>
+            </section>
+
+
+            <div class="jumbotron" style=" background-color: white; opacity: 0.6; border-radius: 50px; " >
+              <h2 style=" text-align: center;" >Courses</h2>
+
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm">
+                      <img src="https://kidsmartapp.co.uk/content/wp-content/uploads/2019/07/maths-chalkboard-1.jpg" style=" width: 200px; height:200px; border-radius: 100px; " alt="">
+                      <h4 style=" text-align: left; " >Mathematics</h4>
+                    </div>
+                    <div class="col-sm">
+                      <img src="https://images.theconversation.com/files/191827/original/file-20171025-25516-g7rtyl.jpg?ixlib=rb-1.1.0&rect=0%2C70%2C7875%2C5667&q=45&auto=format&w=926&fit=clip" style=" width: 200px; height:200px; border-radius: 100px " alt="">
+                      <h4 style=" text-align: left; " >Physics</h4>
+                    </div>
+                    <div class="col-sm">
+                      <img src="https://img.freepik.com/free-vector/hand-drawn-chemistry-background_23-2148164901.jpg?size=338&ext=jpg" style=" width: 200px; height:200px; border-radius:100px; " alt="">
+                      <h4 style=" text-align: left; " >Chemistry</h4>
+                    </div>
+                    <div class="col-sm">
+                      <img src="https://static.wixstatic.com/media/7fe4e3_e9631d35de724b12b75a50f50d0c76fd~mv2.jpg/v1/crop/x_0,y_60,w_395,h_275/fill/w_553,h_385,al_c,lg_1,q_80/Biology.webp" style=" width: 200px; height:200px; border-radius:100px; " alt="">
+                      <h4 style=" text-align: left; " >Chemistry</h4>
+                    </div>
+                    <div class="col-sm">
+                      <br><br><br><br><br><br><br><br>
+
+                      <a class="btn btn-outline-dark bg-warning text-dark" href="{% url 'theApp:coursepage' %}">view more</a>
+
+                    </div>
+                  </div>
+
+                </div>
+                </div>
 
 
 
