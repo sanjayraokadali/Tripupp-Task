@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'theApp/HomePage.html' %}
+
+{% block bodyblock %}
+<h1>User Account!</h1>
+{% if user.is_authenticated %}
+  <h1> {{ user.username }}</h1>
+
+  {% for item in doubts %}
+    {% if user.username == item.username %}
+          <br>
+          <ul class="list-group">
+              <li class="list-group-item"> Subject: {{ item.subject  }} </li>
+              <li class="list-group-item">Language: {{ item.language }}</li>
+              <li class="list-group-item"> Doubt: <br> {{ item.doubt }}</li>
+
+          </ul>
+          <br>
+
+
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% endblock %}

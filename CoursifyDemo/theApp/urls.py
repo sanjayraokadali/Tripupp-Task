@@ -15,4 +15,6 @@ urlpatterns = [
     url('^StudentRegistration/$',views.RegisterPage,name='registerpage'),
     url('^ClarifyDoubtPage/$',views.ClarifyDoubtPage,name='clarifydoubtpage'),
     url('^/StudentLogin/$',views.LoginPage,name='loginpage'),
+    url('^MyAccount/$',views.AccountPage,name='accountpage'),
+    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

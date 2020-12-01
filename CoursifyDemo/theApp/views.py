@@ -3,6 +3,7 @@ from theApp.models import DoubtModel, ClarifyDoubtModel
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from theApp.forms import StudentRegistrationModelForm
+from django.contrib.auth.models import User
 
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -52,6 +53,13 @@ def LoginPage(request):
             return render(request,'theApp/LoginPage.html',{'message':'Invalid Details, Please Try Again!'})
 
     return render(request,'theApp/LoginPage.html')
+
+def AccountPage(request):
+
+
+    doubts = DoubtModel.objects.all()
+
+    return render(request,'theApp/AccountPage.html',{'doubts':doubts})
 
 def CoursePage(request):
 
