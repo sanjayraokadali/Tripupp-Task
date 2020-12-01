@@ -22,10 +22,7 @@
         {% csrf_token %}
 
 
-    <div class="form-group">
-      <label for="exampleFormControlInput1" style="  color: black;" >Please Enter your registered Username:</label>
-      <input type="username" name='username' class="form-control" id="exampleFormControlInput1" placeholder="Username">
-    </div>
+    <input type="hidden" name="username" value="{{ user.username }}">
 
 
     <div class="form-group">

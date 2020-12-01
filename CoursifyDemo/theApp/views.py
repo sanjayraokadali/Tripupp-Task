@@ -72,6 +72,7 @@ def CoursePage(request):
 
 def DoubtPage(request):
 
+
     if request.method == 'POST':
 
         username = request.POST.get('username')
@@ -95,6 +96,8 @@ def ClarifyDoubtPage(request):
         subject = request.POST.get('subject')
         doubt_pic = request.FILES.get('doubt_pic')
         doubt = request.POST.get('doubt')
+
+        print(username)
 
         query = ClarifyDoubtModel.objects.create(username = username, subject = subject,doubt_pic = doubt_pic, doubt = doubt)
 
@@ -121,7 +124,10 @@ def LiveClassPage(request):
         time = request.POST.get('time')
         query = request.POST.get('query')
 
-        query = LIVEClassModel.objects.create( username=username, subject = subject, date = date, time = time, query = query)
+        print(username)
+        print(subject)
+
+        query = LIVEClassModel.objects.create( username= username, subject = subject, date = date, time = time, query = query)
 
         query.save()
 

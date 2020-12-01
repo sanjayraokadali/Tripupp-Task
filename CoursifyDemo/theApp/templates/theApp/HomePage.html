@@ -12,11 +12,12 @@
 
   </head>
 
+        <div class="jumbotron" style="padding-left: 50px; padding-right: 50px; margin-left: 30px; border-style: inset; border-color: black; border-radius: 50px; background-color: white; width: 1470px; background-image: url('https://selfgrowth.info/photos/blue-photos/best-blue-textures-free-royalty8399.jpg'); "  >
 
 
-
+    {% block bodyblock %}
   <body style=" background-image: url('https://c1.wallpaperflare.com/preview/281/150/428/various-book-books.jpg'); background-attachment: fixed; ">
-    <ul class="navbar nav justify-content-end sticky-top " style=" background-color: rgba(254, 255, 171, 0.4);
+    <ul class="navbar nav justify-content-end fixed-top " style=" background-color: rgba(254, 255, 171, 0.4);
       border-radius: 70px;
 
     " >
@@ -91,9 +92,7 @@
       {% endif %}
 
     </ul>
-      <div class="jumbotron" style="padding-left: 50px; padding-right: 50px; margin-left: 30px; border-style: inset; border-color: black; border-radius: 50px; background-color: white; width: 1470px; background-image: url('https://selfgrowth.info/photos/blue-photos/best-blue-textures-free-royalty8399.jpg'); "  >
 
-        {% block bodyblock %}
 
         <div class="media">
           <img src="https://images.unsplash.com/3/doctype-hi-res.jpg?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMDd9" style=" width: 200px; height:200px; border-radius: 50px;"  class="mr-3" alt="...">
@@ -105,7 +104,7 @@
           </div>
           </div>
 
-              <br><br><br><br>
+              <br><br><br>
           <section id="ask_doubts">
             <h1 style=" text-align: end; background-color: rgba(45, 23, 123, 0.2);
                 border-top-left-radius: 60px; border-bottom-left-radius: 60px; opacity: 0.8;
@@ -114,7 +113,7 @@
           </section>
 
 
-              <br><br>
+              <br>
 
 
         {% if user.is_authenticated %}
@@ -347,7 +346,7 @@
 
                 style=" border: solid; border-color: black; height: 90px; border-radius: 30px; position: relative; top: 50%; left: 37% ; opacity: 0.5; "
 
-                href="{% url 'theApp:doubtpage' %}"> <br> <h3>Book Your Live Class Now!</h3>
+                href="{% url 'theApp:liveclasspage' %}"> <br> <h3>Book Your Live Class Now!</h3>
 
               </a>
               {% else %}
@@ -408,8 +407,8 @@
                       <h4 style=" text-align: left; " >Chemistry</h4>
                     </div>
                     <div class="col-sm">
-                      <img src="https://static.wixstatic.com/media/7fe4e3_e9631d35de724b12b75a50f50d0c76fd~mv2.jpg/v1/crop/x_0,y_60,w_395,h_275/fill/w_553,h_385,al_c,lg_1,q_80/Biology.webp" style=" width: 200px; height:200px; border-radius:100px; " alt="">
-                      <h4 style=" text-align: left; " >Chemistry</h4>
+                      <img src="https://www.minhajcollege.ac.uk/wp-content/uploads/2017/10/ALevel-Biology.jpg" style=" width: 200px; height:200px; border-radius:100px; " alt="">
+                      <h4 style=" text-align: left; " >Biology</h4>
                     </div>
                     <div class="col-sm">
                       <br><br><br><br><br><br><br><br>
@@ -422,6 +421,17 @@
                 </div>
                 </div>
 
+                <br><br>
+
+
+                <div class="jumbotron" style=" background-color: rgba(465,329,53,0.6); border-radius: 40px; " >
+                    <h4 style=" text-align: center;" > Thank for using Coursify! Download our App and never depend on your PC! </h4>
+
+                    <a style=" border-radius: 50px;  position: relative; top: 50%; left: 45%; width: 150px; height: 100px; " class="btn btn-success" href="https://s3.amazonaws.com/gonativeio/static/5fc66f14f220c477229e4963/app-release.apk" download >
+                    <br>  Download App
+                    </a>
+                </div>
+
 
 
             </div>
@@ -429,7 +439,7 @@
 
 
         {% endblock %}
-
+        </div>
       </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -2,7 +2,7 @@
 {% extends 'theApp/HomePage.html' %}
 
 {% block bodyblock %}
-
+<body style=" background-image: url('https://c1.wallpaperflare.com/preview/281/150/428/various-book-books.jpg'); ">
 <div class="jumbotron" style=" background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/82/35/Vudxaz.jpg');
 
   border-radius: 50px;
@@ -21,10 +21,8 @@
 
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-    <div class="form-group">
-      <label for="exampleFormControlInput1" style="  color: black;" >Please Enter your registered Username:</label>
-      <input type="username" name='username' class="form-control" id="exampleFormControlInput1" placeholder="Username">
-    </div>
+
+          <input type="hidden" name="username" value="{{user.username}}">
     <div class="form-group">
       <label for="exampleFormControlSelect1" style="  color: black;">Select Subject:</label>
       <select class="form-control" name='subject' id="exampleFormControlSelect1">
@@ -35,6 +33,7 @@
         <option>Computer Science</option>
       </select>
     </div>
+
     <div class="form-group">
       <label for="exampleFormControlSelect1" style="  color: black;">Upload Picture of your doubt:</label><br>
       <input type="file" id="img" name="doubt_pic" accept="image/*"><br>
