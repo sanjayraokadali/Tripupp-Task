@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'theApp/HomePage.html' %}
+
+{% block bodyblock %}
+
+  <div class="container" >
+    <h3>Student Login </h3>
+    <form method="POST"  >
+      {% csrf_token %}
+    <div class="form-group">
+      <h5 style=" color:red; " > {{ message }} </h5>
+      <label for="exampleInputEmail1">Username</label>
+      <input type="username" name='username' style=" width:400px;  " class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">Please input your username correctly, as the field is case sensitive!</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" name='password' style=" width:400px;" class="form-control" id="exampleInputPassword1">
+    </div>
+
+    <div class="form-group">
+      <h6>New User? Please register </h6>
+      <a href="{% url 'theApp:registerpage' %}" class="btn btn-success" >Here!</a>
+    </div>
+
+    <input type="submit" class="btn btn-info" name="" value="Login" style=" position: relative; top: 50%; left:40%; width:120px; " >
+  </form>
+  </div>
+
+
+{% endblock %}

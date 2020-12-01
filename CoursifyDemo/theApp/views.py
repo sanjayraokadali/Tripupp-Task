@@ -3,6 +3,10 @@ from theApp.models import DoubtModel, ClarifyDoubtModel
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from theApp.forms import StudentRegistrationModelForm
+
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 def HomePage(request):
 
@@ -27,6 +31,27 @@ def RegisterPage(request):
             return HomePage(request)
 
     return render(request,'theApp/RegisterPage.html',{'form':form})
+
+def LoginPage(request):
+
+    if request.method == 'POST':
+
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username = username, password = password)
+
+        if user:
+
+            login(request,user)
+
+            return HttpResponseRedirect(reverse('homepage'))
+
+        else:
+
+            return LoginPage(request, {'message':'Invalid Details, Please Try Again!'})
+
+    return render(request,'theApp/LoginPage.html')
 
 def CoursePage(request):
 
@@ -62,7 +87,7 @@ def ClarifyDoubtPage(request):
 
         query.save()
 
-        return HomePage(request)
+        return HttpResponseRedirect(reverse('homepage'))
 
     return render(request,'theApp/ClarifyDoubtPage.html')
 
@@ -74,3 +99,10 @@ def LibraryPage(request):
 def LiveClassPage(request):
 
     return render(request,'theApp/LiveClassPage.html')
+
+@login_required
+def Logout(request):
+
+    logout(request)
+
+    return HttpResponseRedirect(reverse('homepage'))

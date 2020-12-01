@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -47,8 +48,14 @@
       <li class="nav-item">
         <p>___</p>
       </li>
+      {% if user.is_authenticated %}
       <li class="nav-item">
-        <a class="nav-link btn btn-light" href="#" tabindex="-1" style=" border-radius: 40px;"> <strong>Student Login</strong> </a>
+        <a class="nav-link btn btn-light" href="{% url 'logout' %}" tabindex="-1" style=" border-radius: 40px;"> <strong>Logout</strong> </a>
+      </li>
+
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link btn btn-light" href="{% url 'theApp:loginpage' %}" tabindex="-1" style=" border-radius: 40px;"> <strong>Student Login</strong> </a>
       </li>
       <li class="nav-item">
         <p>___</p>
@@ -59,6 +66,10 @@
       <li class="nav-item">
         <p>___</p>
       </li>
+
+
+      {% endif %}
+
     </ul>
       <div class="jumbotron" style=" padding-left: 50px; padding-right: 50px; margin-left: 30px; border-radius: 50px; background-color: white; width: 1470px; background-image: url('https://selfgrowth.info/photos/blue-photos/best-blue-textures-free-royalty8399.jpg'); "  >
 
@@ -221,11 +232,11 @@
                     alt="">
                   </div>
 
-                  <div class="col-sm">
+                  <div class="col-sm" style=" padding-left: 30spx; "  >
 
-                    <div class="alert alert-white" role="alert" style=" border-radius: 50px; " >
+                    <div class="alert alert-light" role="alert" style=" border-radius: 50px; " >
 
-                      <div class="alert alert-dark" role="alert" style=" border-radius: 50px; ">
+                      <div class="alert alert-light" role="alert" style=" border-radius: 50px; ">
                       <h2 class="alert-heading" style=" text-align: center;  " >Accessible Everwhere!</h2>
                       <p>Access to quality education anytime, anywhere!</p>
                       <hr><br>
