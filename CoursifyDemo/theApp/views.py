@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from theApp.models import DoubtModel, ClarifyDoubtModel
+from theApp.models import DoubtModel, ClarifyDoubtModel, LIVEClassModel
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from theApp.forms import StudentRegistrationModelForm
@@ -59,7 +59,11 @@ def AccountPage(request):
 
     doubts = DoubtModel.objects.all()
 
-    return render(request,'theApp/AccountPage.html',{'doubts':doubts})
+    clarifydoubts = ClarifyDoubtModel.objects.all()
+
+    liveclass = LIVEClassModel.objects.all()
+
+    return render(request,'theApp/AccountPage.html',{'doubts':doubts,'cdoubts':clarifydoubts,'liveclass':liveclass})
 
 def CoursePage(request):
 
@@ -105,6 +109,22 @@ def LibraryPage(request):
     return render(request,'theApp/LibraryPage.html')
 
 def LiveClassPage(request):
+
+    if request.method == 'POST':
+
+
+        query = 'NULL'
+        username = request.POST.get('username')
+        subject = request.POST.get('subject')
+        date = request.POST.get('date')
+        time = request.POST.get('time')
+        query = request.POST.get('query')
+
+        query = LIVEClassModel.objects.create( username=username, subject = subject, date = date, time = time, query = query)
+
+        query.save()
+
+        return HttpResponseRedirect(reverse('homepage'))
 
     return render(request,'theApp/LiveClassPage.html')
 

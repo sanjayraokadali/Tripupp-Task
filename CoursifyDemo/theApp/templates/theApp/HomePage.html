@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" style=" scroll-behavior: smooth;" >
   <head>
     <meta charset="utf-8">
     <title>Coursify Demo</title>
@@ -23,14 +23,22 @@
     <li class="nav-item">
       <p>______</p>
     </li>
+
       <li class="nav-item">
         <a class="nav-link btn btn-light" href="{% url 'homepage' %}" style=" border-radius: 40px;" > <strong> Home</strong> </a>
       </li>
       <li class="nav-item">
         <p>______</p>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link btn btn-light" href="{% url 'theApp:doubtpage' %}" style=" border-radius: 40px;"> <strong>Ask Doubt</strong> </a>
+        <a class="nav-link btn btn-light" href="#ask_doubts" style=" border-radius: 40px;"> <strong>Ask Doubt</strong> </a>
+      </li>
+      <li class="nav-item">
+        <p>______</p>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-light" href="#clarify_doubts" style=" border-radius: 40px;"> <strong>Clarify Doubts</strong> </a>
       </li>
       <li class="nav-item">
         <p>______</p>
@@ -48,7 +56,8 @@
         <p>______</p>
       </li>
       <li class="nav-item">
-        <a class="nav-link btn btn-light" href="{% url 'theApp:liveclasspage' %}" tabindex="-1" style=" border-radius: 40px;"> <strong>Live Class</strong> </a>
+
+        <a class="nav-link btn btn-light" href="#live_class"  tabindex="-1" style=" border-radius: 40px;"> <strong>Live Class</strong> </a>
       </li>
       <li class="nav-item">
         <p>___</p>
@@ -102,13 +111,17 @@
           </div>
 
               <br><br><br><br>
+          <section id="ask_doubts">
+            <h1 style=" text-align: end; background-color: rgba(45, 23, 123, 0.2);
+                border-top-left-radius: 60px; border-bottom-left-radius: 60px; opacity: 0.8;
 
-          <h1 style=" text-align: end; background-color: rgba(45, 23, 123, 0.2);
-              border-top-left-radius: 60px; border-bottom-left-radius: 60px; opacity: 0.8;
+            " > <strong> Clarify Your Doubts <br>  In Your Own Language </strong> </h1>
+          </section>
 
-          " > <strong> Clarify Your Doubts <br>  In Your Own Language </strong> </h1>
 
-            <br><br>
+              <br><br>
+
+
             <a class="btn btn-primary text-white"
 
               style=" border: solid; border-color: black;  border-radius: 100px; position: relative; top: 50%; left: 75% ; opacity: 0.5; "
@@ -184,8 +197,10 @@
             </div>
             </div>
           </div>
+          <section id="clarify_doubts">
+            <br><br><br><br>
 
-          <br><br><br><br>
+          </section>
 
 
           <div class="card-group">
@@ -238,8 +253,10 @@
             <br><br><br>
 
             <div class="jumbotron" style=" border-radius: 60px; background-color:  " >
+              <section id="live_class">
+                    <h1 style=" text-align: center; " >LIVE Classes</h1>
+              </section>
 
-              <h1 style=" text-align: center; " >LIVE Classes</h1>
                   <br>
               <div class="container">
                 <div class="row">
@@ -273,13 +290,15 @@
 
             <br>
 
-            <a class="btn btn-outline-dark bg-success text-white"
+              <a class="btn btn-outline-dark bg-success text-white"
 
-              style=" border: solid; border-color: black; height: 90px; border-radius: 30px; position: relative; top: 50%; left: 37% ; opacity: 0.5; "
+                style=" border: solid; border-color: black; height: 90px; border-radius: 30px; position: relative; top: 50%; left: 37% ; opacity: 0.5; "
 
-              href="{% url 'theApp:doubtpage' %}"> <br> <h3>Book Your Live Class Now!</h3>
+                href="{% url 'theApp:doubtpage' %}"> <br> <h3>Book Your Live Class Now!</h3>
 
-            </a>
+              </a>
+
+
 
             </div>
 

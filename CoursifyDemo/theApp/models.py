@@ -22,3 +22,15 @@ class ClarifyDoubtModel(models.Model):
     def __str__(self):
 
         return self.doubt
+
+class LIVEClassModel(models.Model):
+
+    username = models.CharField(max_length=263)
+    subject = models.CharField(max_length=264)
+    date = models.CharField(max_length=264)
+    time = models.CharField(max_length=264)
+    query = models.TextField()
+
+    def __str__(self):
+
+        return self.username
