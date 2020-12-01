@@ -50,6 +50,10 @@
       </li>
       {% if user.is_authenticated %}
       <li class="nav-item">
+        <a class="nav-link btn btn-light" href="#" tabindex="-1" style=" border-radius: 40px;"> <strong>Hi! {{ user.username }}, Visit your Account</strong> </a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link btn btn-light" href="{% url 'logout' %}" tabindex="-1" style=" border-radius: 40px;"> <strong>Logout</strong> </a>
       </li>
 
@@ -60,12 +64,7 @@
       <li class="nav-item">
         <p>___</p>
       </li>
-      <li class="nav-item">
-        <a class="nav-link btn btn-light" href="{% url 'theApp:registerpage' %}" tabindex="-1" style=" border-radius: 40px;"> <strong>Student Registration</strong> </a>
-      </li>
-      <li class="nav-item">
-        <p>___</p>
-      </li>
+
 
 
       {% endif %}

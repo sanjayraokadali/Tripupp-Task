@@ -49,7 +49,7 @@ def LoginPage(request):
 
         else:
 
-            return LoginPage(request, {'message':'Invalid Details, Please Try Again!'})
+            return render(request,'theApp/LoginPage.html',{'message':'Invalid Details, Please Try Again!'})
 
     return render(request,'theApp/LoginPage.html')
 
