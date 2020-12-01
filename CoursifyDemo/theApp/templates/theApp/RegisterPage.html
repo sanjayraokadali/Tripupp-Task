@@ -3,16 +3,16 @@
 
 {% block bodyblock %}
 
-  <div class="jumbotron">
-    <h5>Student Registration Form</h5>
+  <div class="jumbotron" style=" background-color: rgba(158, 23, 45, 0.4); border-radius: 200px; color: white;" >
+    <h5 style= " padding-left: 500px;" >Student Registration Form</h5>
 
-    <form class="form-group"  method="POST" >
+    <form class="form-group"  method="POST" style=" padding-left: 500px;" >
       {% csrf_token %}
 
       {{ form.as_p }}
 
 
-      <input type="submit" class="btn btn-outline-info" style=" border-radius: 10px " name="" value="Register!  ">
+      <input type="submit" class="btn btn-light" style=" border-radius: 10px " name="" value="Register!  ">
     </form>
 
 

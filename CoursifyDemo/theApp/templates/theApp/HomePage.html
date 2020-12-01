@@ -99,7 +99,9 @@
           <img src="https://images.unsplash.com/3/doctype-hi-res.jpg?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMDd9" style=" width: 200px; height:200px; border-radius: 50px;"  class="mr-3" alt="...">
           <div class="media-body">
             <h1 class="mt-0" style=" font-size: 5rem; opacity: 0.6;">CoursiFy  <br>An E-Learning Platform</h1>
-
+            {% if user.is_authenticated %}
+              <h4 class="mt-0" style=" font-size: 3rem; opacity: 0.6;"> Welcome Back {{ user.first_name }}!</h4>
+            {% endif %}
           </div>
           </div>
 
