@@ -34,7 +34,10 @@
                 <ul class="list-group">
                     <li class="list-group-item"> Subject: {{ item.subject  }} </li>
                     <li class="list-group-item">
-                    Uploaded Image: <br>  <img src="{{ item.doubt_pic.url }}" alt=".." style=" width: 200px; height: 200px;" >
+                        Uploaded Image: <br>
+                      <a href="{{ item.doubt_pic.url }}">
+                    <img src="{{ item.doubt_pic.url }}" alt=".." style=" width: 200px; height: 200px;" >
+                    </a>
                     </li>
                     <li class="list-group-item"> Doubt: <br> {{ item.doubt }}</li>
 
